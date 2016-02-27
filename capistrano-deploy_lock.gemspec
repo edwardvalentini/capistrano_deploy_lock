@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'capistrano_deploy_lock/version'
+require 'capistrano/deploy_lock/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "capistrano_deploy_lock"
-  gem.version       = CapistranoDeployLock::VERSION
+  gem.name          = "capistrano-deploy_lock"
+  gem.version       = Capistrano::DeployLock::VERSION
   gem.authors       = ["Nathan Broadbent"]
   gem.email         = ["nathan.f77@gmail.com"]
   gem.description   = %q{Lock a server during deploy, to prevent people from deploying at the same time.}
@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.executables   = gem.files.grep(%r{^exe/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 end

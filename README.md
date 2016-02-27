@@ -7,7 +7,7 @@ Lock a server during deploy, to prevent people from deploying at the same time.
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano_deploy_lock'
+    gem 'capistrano-deploy_lock'
 
 And then execute:
 
