@@ -65,7 +65,4 @@ module Capistrano
   end
 end
 
-# Load recipe if required from deploy script
-if defined?(Capistrano::Configuration) && Capistrano::Configuration.instance
-  require 'capistrano/recipes/deploy_lock'
-end
+load File.expand_path('../tasks/deploy_lock.rake', __FILE__)

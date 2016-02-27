@@ -93,11 +93,21 @@ Refreshes the current lock's expiry time if it is less than the default time.
 
 If your deploys usually take longer than 15 minutes, you can configure the default expiry time with:
 
-    set :default_lock_expiry, (20 * 60)   # Sets the default expiry to 20 minutes
+```ruby
+set :default_lock_expiry, (20 * 60)   # Sets the default expiry to 20 minutes
+```
 
-The lock file will be created at `#{shared_path}/capistrano.lock.yml` by default. You can configure this with:
+The lock file's default name is `capistrano.lock.yml`. You can change this with:
 
-    set :deploy_lockfile, "path/to/deploy/lock/file"
+```ruby
+set :deploy_lockfile_name, 'mylockfile.lock.yml'
+```
+
+The lock file will be created at `deploy_path.join(fetch(:deploy_lockfile_name))` by default. You can configure this with:
+
+```ruby
+set :deploy_lockfile, shared_path.join(fetch(:deploy_lockfile_name))
+```
 
 
 ## MOTD script
